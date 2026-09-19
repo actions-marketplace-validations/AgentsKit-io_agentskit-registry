@@ -216,7 +216,7 @@
           "docs/getting-started.md",
           "scripts/quickstart.test.mjs"
         ],
-        "sourceHash": "sha256:8fe7453304a479517e7882a88263407c1a8727d0b68dddc3381f4fe33be09172"
+        "sourceHash": "sha256:c7feb35335af504dd776022c9b86f1535f4a07eb5991ec79bdc82cafbbeab2f2"
       },
       "exceptions": []
     }
