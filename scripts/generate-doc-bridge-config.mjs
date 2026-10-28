@@ -39,19 +39,19 @@ const ownership = Object.fromEntries(ids.map((id) => [id, {
 Object.assign(ownership, {
   'registry-architecture': {
     path: 'docs', group: 'documentation', purpose: 'Registry ownership, boundaries, quickstart, and contribution journey',
-    agentDoc: 'docs/for-agents/index.md', humanDoc: 'https://registry.agentskit.io/docs/quick-start', checks,
+    agentDoc: 'docs/for-agents/registry-architecture.md', humanDoc: 'https://registry.agentskit.io/docs/quick-start', checks,
   },
   'registry-catalog': {
     path: 'catalog', group: 'catalog', purpose: 'Agent lifecycle, stacks, policy, and catalog generation',
-    agentDoc: 'docs/for-agents/index.md', humanDoc: 'https://registry.agentskit.io/docs/using', checks,
+    agentDoc: 'docs/for-agents/registry-catalog.md', humanDoc: 'https://registry.agentskit.io/docs/using', checks,
   },
   'registry-discovery': {
     path: 'scripts/lib/deterministic-discovery.mjs', group: 'discovery', purpose: 'Canonical deterministic knowledge artifact generation',
-    agentDoc: 'docs/for-agents/index.md', humanDoc: 'https://registry.agentskit.io/docs/using', checks,
+    agentDoc: 'docs/for-agents/registry-discovery.md', humanDoc: 'https://registry.agentskit.io/docs/using', checks,
   },
   'registry-validation': {
     path: 'validation', group: 'validation', purpose: 'Public independent-review evidence summaries',
-    agentDoc: 'docs/for-agents/index.md', humanDoc: 'https://registry.agentskit.io/docs/contributing', checks,
+    agentDoc: 'docs/for-agents/registry-validation.md', humanDoc: 'https://registry.agentskit.io/docs/contributing', checks,
   },
 })
 
@@ -82,6 +82,15 @@ const config = {
       ],
     },
   },
+  analysis: {
+    documents: {
+      exclude: [
+        { pattern: 'CODE_OF_CONDUCT.md', reason: 'Community conduct policy; describes no Registry code, agents, or artifacts.' },
+        { pattern: 'GOVERNANCE.md', reason: 'Project governance policy; describes no Registry code, agents, or artifacts.' },
+        { pattern: 'SECURITY.md', reason: 'Vulnerability reporting policy; describes no Registry code, agents, or artifacts.' },
+      ],
+    },
+  },
   index: {
     outFile: '.doc-bridge/index.json',
     llmsTxt: { enabled: true, outFile: '.doc-bridge/llms.txt' },
@@ -109,7 +118,7 @@ const config = {
         { url: 'https://playbook.agentskit.io/docs', paths: ['README.md', 'docs/getting-started.md'] },
         { url: 'https://chat.agentskit.io', paths: ['README.md', 'docs/getting-started.md'] },
         { url: 'https://doc-bridge.agentskit.io', paths: ['README.md'] },
-        { url: 'https://github.com/AgentsKit-io/code-review-cli', paths: ['README.md'] },
+        { url: 'https://code-review.agentskit.io', paths: ['README.md'] },
       ],
       ecosystemContract: { manifest: 'ecosystem.json', claims: 'ecosystem-claims.json', productId: 'registry' },
       quickstarts: [{

@@ -160,9 +160,10 @@
         "ecosystem": [
           "## AgentsKit ecosystem",
           "registry.agentskit.io",
-          "playbook.agentskit.io",
           "AgentsKit Chat",
-          "Doc Bridge"
+          "Doc Bridge",
+          "code-review.agentskit.io",
+          "harness.agentskit.io"
         ]
       },
       "visuals": [
@@ -200,8 +201,8 @@
         }
       ],
       "freshness": {
-        "reviewedOn": "2026-07-14",
-        "reviewDueOn": "2026-10-12",
+        "reviewedOn": "2026-10-26",
+        "reviewDueOn": "2027-01-24",
         "sources": [
           "README.md",
           "package.json",
@@ -216,7 +217,7 @@
           "docs/getting-started.md",
           "scripts/quickstart.test.mjs"
         ],
-        "sourceHash": "sha256:ee2e1f5f53f561ac736474d9070b21abf3b2439affc3c90222d52bfdadf4f90b"
+        "sourceHash": "sha256:f2ed2af36bef8ef6866643b290148f0c2e6ca8f72d43323869c03f0ddd91df22"
       },
       "exceptions": []
     }

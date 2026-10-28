@@ -107,7 +107,7 @@ contracts. The copied factory stays ordinary application code.
 - **346 validated, installable agents** across 23 categories, from coding and
   security to legal, clinical, marketing, operations, support, and research.
 - **333 independent-review summaries** with scores, confidence, strengths, and
-  required adjustments; private raw reviewer output is never published.
+  reviewer notes; private raw reviewer output is never published.
 - **Typed source + focused tests + usage guide** for every installable entry.
 - **Eval replay fixtures** for repeatable behavioral checks without live keys.
 - **JSON, `llms.txt`, MCP, and deterministic discovery artifacts** for people,
@@ -120,8 +120,8 @@ marketing copy.
 ## Discovery without unnecessary backend calls
 
 Exact agent IDs, titles, install commands, categories, capabilities,
-contribution links, and ecosystem navigation resolve from a signed local
-artifact. Semantic requests such as “which agent fits my incident workflow?”
+contribution links, and ecosystem navigation resolve from a local artifact
+pinned by content hash. Semantic requests such as “which agent fits my incident workflow?”
 escalate through AgentsKit Chat to the trusted cited backend only after a
 validated local miss.
 
@@ -141,12 +141,18 @@ New agents and improvements are welcome. Follow [CONTRIBUTING.md](./CONTRIBUTING
 use a neighboring validated agent as a reference, and run:
 
 ```bash
+npm ci
+npm run check:no-legacy-chat-imports
+npm run docs:bridge:config
 npm run validate
 npm run lint
 npm test
+npm run test:quickstart
 npm run eval:run -- --ecosystem-doc-bridge
 npm run build
+npm run docs:bridge:index
 npm run docs:bridge:gate
+npm run docs:bridge:conformance
 ```
 
 Generated indexes, claims, deterministic artifacts, and Doc Bridge handoffs
@@ -164,12 +170,13 @@ must review against your provider, tools, data policy, and risk profile.
 - **Registry** — start from owned, ready-made source.
 - [AgentsKit Chat](https://chat.agentskit.io) — deliver one
   agent experience across Web, native, and terminal interfaces.
-- [Agents Playbook](https://playbook.agentskit.io/docs) — apply production
-  engineering and review discipline.
 - [Doc Bridge](https://doc-bridge.agentskit.io) — turn documentation
-  into executable agent handoffs.
-- [Code Review](https://github.com/AgentsKit-io/code-review-cli) — run deep,
+  into executable agent handoffs. Optional companion for repositories that
+  install agents: [how it fits](./docs/doc-bridge.md).
+- [Code Review](https://code-review.agentskit.io) — run deep,
   low-noise review with the model already in use.
+- [Harness](https://harness.agentskit.io) — the keep-pushing delivery
+  loop for your SDLC.
 
 ## Compatibility and license
 
